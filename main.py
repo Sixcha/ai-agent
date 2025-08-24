@@ -1,0 +1,35 @@
+import os
+import sys
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
+from functions.get_files_info import get_files_info
+
+
+
+def main():
+    # load_dotenv()
+
+    # api_key = os.environ.get("GEMINI_API_KEY")
+    # client = genai.Client(api_key=api_key)
+
+    # args = sys.argv[1:]
+    # if not args:
+    #     sys.exit("No Prompt")
+    # prompt = "".join(args)
+    # messages = types.Content(role="user", parts = [types.Part(text=prompt)])
+
+    # response = client.models.generate_content(
+    # model='gemini-2.0-flash-001', contents=messages
+    # )
+    # print(response.text)
+    # argSet = set(args)
+    # if ("--verbose" in argSet):
+    #     print(f'User prompt: {prompt}')
+    #     print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
+    #     print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
+    get_files_info("calculator")
+    
+
+if __name__ == "__main__":
+    main()
